@@ -8,8 +8,8 @@
  * @param string $children 子元素字段（键名），当元素含有该字段时，进行递归排序
  * @return array
  */
-function array_orderby(&$array,$orderby = false,$order = 'desc',$children = false) {
-  if($orderby == false)
+function array_orderby(&$array,$orderby = null,$order = 'desc',$children = false) {
+  if($orderby == null)
     return $array;
   $key_value = $new_array = array();
   foreach($array as $k => $v) {
