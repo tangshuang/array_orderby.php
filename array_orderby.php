@@ -26,7 +26,7 @@ function array_orderby(&$array,$orderby = null,$order = 'desc',$children = false
     $new_array[$k] = $array[$k];
     // 如果有children
     if($children && isset($new_array[$k][$children])) {
-      $new_array[$k][$children] = array_sort($new_array[$k][$children]);
+      $new_array[$k][$children] = array_orderby($new_array[$k][$children],$orderby,$order,$children);
     }
   }
   $new_array = array_values($new_array); // 使键名为0,1,2,3...
